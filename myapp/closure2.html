@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>클로저를 사용한 Counting Star</p>
+    <button id="inclease">+</button>
+    <p id="count">별 갯수 : 0</p>
+    <script scr="/closure.js"></script>
+    <script>
+      var incleaseBtn = document.getElementById('inclease');
+      var count = document.getElementById('count');
+
+      //카운트 상태 유지하기 위한 전역변수
+
+      var inclease = (function () {
+        // 카운트 상태를 유지하기 위한 자유 변수
+        var counter = 0;
+        return function () {
+          return ++counter;
+        };
+      })();
+      incleaseBtn.onclick = function () {
+        const starNum = inclease();
+        count.innerHTML = '별 갯수 : ' + starNum;
+        console.log(starNum);
+      };
+    </script>
+  </body>
+</html>
