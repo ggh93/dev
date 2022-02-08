@@ -1,11 +1,10 @@
-function doSomething() {
-  var name = 'Lee';
-
-  setTimeout(function () {
-    console.log('My name is ' + name);
-  }, 100);
+function outerFunc() {
+  var x = 10;
+  var innerFunc = function () {
+    console.log(x);
+  };
+  return innerFunc();
 }
-setTimeout(function () {
-  console.log('My name is asd');
-}, 1000);
-doSomething();
+
+var inner = outerFunc();
+inner();
