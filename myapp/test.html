@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style>
+      .red {
+        color: #ff0000;
+      }
+      .blue {
+        color: #0000ff;
+      }
+    </style>
+  </head>
   <body>
     <script src="/index.js"></script>
-    <button id="myButton">Click me</button>
+    <button class="myButton">Click me!</button>
     <script>
-      var button = document.getElementById('myButton');
-      button.addEventListener('click', function () {
-        console.log('button clicked!');
-      });
+      document
+        .querySelector('.myButton')
+        .addEventListener('click', () => alert('Clicked!'));
     </script>
   </body>
 </html>
